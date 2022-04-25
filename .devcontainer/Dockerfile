@@ -10,9 +10,9 @@ RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c ". /usr/local/share/nv
 
 # [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends bind9-dnsutils git inotify-tools
+    && apt-get -y install --no-install-recommends bind9-dnsutils git inotify-tools silversearcher-ag
 
-RUN git clone git clone https://github.com/alexedwards/go-reload.git \
+RUN git clone https://github.com/alexedwards/go-reload.git \
     && chmod +x go-reload/go-reload \
     && mv go-reload/go-reload /usr/local/bin/
 

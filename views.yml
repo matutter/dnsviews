@@ -1,17 +1,16 @@
 upstream: 10.40.91.91:5300
-
 listen: 0.0.0.0:53053
-
 debug: yes
-
+default_rule: deny
+logging:
+  include_date: no
 views:
 - name: default
   sources: [10.40.0.0/16]
   include: [10.20.0.0/16]
-  action:  exlude
+  exclude: []
+  rule:  deny
 - name: local
   sources: [127.0.0.1/32]
-  action:  include
-
-logging:
-  include_date: no
+  exclude: []
+  rule:  allow
